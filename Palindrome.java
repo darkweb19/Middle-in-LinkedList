@@ -1,17 +1,9 @@
-public class Palindrome {
-    public boolean isPalindrome(ListNode head){
-         if(head == null || head.next == null){
-            return true ;
-
-         }
-    }
-    ListNode middle = findMiddle(head) ;
-    ListNode secondHalfStart =reverse(middle.next);
-    ListNode firstHalfStart = head ;
-    while(secondHalfStart != null ) {
-        if(firstHalfStart.val != secondHalfStart.val){
-            return false;
+public Node findMiddle(Node head){
+        Node  hare =  head ;
+        Node turtle = head ;
+        while(hare.next != null || hare.next.next != null){
+            hare = hare.next.next;
+            turtle = turtle.next;
         }
-        
+        return turtle ;
     }
-}
